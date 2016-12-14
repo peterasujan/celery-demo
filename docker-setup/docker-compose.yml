@@ -1,0 +1,17 @@
+version: '2'
+services:
+    some-rabbit:
+        image: "rabbitmq:3-management"
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+    flower:
+        build: flower-image
+        ports:
+            - "5555:5555"
+        stdin_open: true
+        tty: true
+    celery-client:
+        build: celery-image
+        stdin_open: true
+        tty: true
