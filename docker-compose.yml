@@ -6,12 +6,12 @@ services:
             - "5672:5672"
             - "15672:15672"
     flower:
-        build: flower-image
+        build: docker-setup/flower-image
         ports:
             - "5555:5555"
         stdin_open: true
         tty: true
     celery-client:
-        build: celery-image
+        build: docker-setup/celery-image
         stdin_open: true
         tty: true
